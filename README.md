@@ -54,3 +54,18 @@ Na tela de edição da lista o usuário pode compartilhar o endereço público d
 
 <h2>Planilha com as atividades e horas detalhadas</h2>
 <a href="https://docs.google.com/spreadsheets/d/1sWPU1SSoXNnolQshartq8J_np_13CtYRR9Ux803yAzs/edit?usp=sharing">Link da Planilha</a>
+
+## Instalação
+
+- `clonar repositório para sua maquina`
+- Editar `.env` e colocar as informações de conexão com o banco de dados (mySQL)
+- `composer install`
+-  Rodar o comando `php artisan key:generate`
+- `php artisan migrate`
+- `php artisan db:seed`
+- `npm install`
+- `npm run production`
+
+##Video Demonstrativo
+
+Link aqui
