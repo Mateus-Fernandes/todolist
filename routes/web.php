@@ -13,11 +13,11 @@
 
 
 Auth::routes();
-/*
+
 Route::get('/sobre', function () {
     return view('sobre.index');
 })->name('sobre');
-*/
+
 Route::get('/{todo}/share', 'Todo\TodoController@edit')->name('todo.editShare'); //public link to Edit To do Items
 
 $this->group(['middleware' => ['auth'], 'namespace' => 'Todo'], function(){
