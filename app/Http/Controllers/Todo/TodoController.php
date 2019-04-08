@@ -15,6 +15,10 @@ class TodoController extends Controller
         return view('Todo.index', compact('todo'));
     }
 
+    public function about(){
+        return view('About.index');
+    }    
+
     public function add(){
         return view('Todo.add');
     }

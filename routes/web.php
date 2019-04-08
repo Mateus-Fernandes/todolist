@@ -14,9 +14,8 @@
 
 Auth::routes();
 
-Route::get('/sobre', function () {
-    return view('Sobre.index');
-})->name('sobre');
+
+Route::get('/sobre', 'Todo\TodoController@about')->name('About.index'); //public link to Edit To do Items
 
 Route::get('/{todo}/share', 'Todo\TodoController@edit')->name('todo.editShare'); //public link to Edit To do Items
 
