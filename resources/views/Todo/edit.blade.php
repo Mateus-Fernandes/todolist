@@ -4,6 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+            <h2>{{$todo->name}}</h2>
             <div id="todo" data-todoid={{$todo->id}}></div>
         </div>
         <div class="share">
