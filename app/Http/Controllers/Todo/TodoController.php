@@ -30,13 +30,13 @@ class TodoController extends Controller
     public function store(Request $request)
     {
         $todo = Todo::create($request->all());
-        return redirect()->route('Todo.edit', $todo->id)->with('alert-success','Todo has been deleted!');
+        return redirect()->route('todo.edit', $todo->id)->with('alert-success','Todo has been deleted!');
     }
 
     public function destroy(Todo $todo)
     {
         $todo->delete();
 
-        return redirect()->route('Todo.index')->with('alert-success','Todo has been deleted!');
+        return redirect()->route('todo.index')->with('alert-success','Todo has been deleted!');
     }
 }
