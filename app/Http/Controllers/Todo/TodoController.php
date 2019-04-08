@@ -12,7 +12,7 @@ class TodoController extends Controller
     public function index(){
         $userId = Auth::user()->id;
         $todo = Todo::where('user_id', $userId)->get(); // list all data from user
-        return view('todo.index', compact('todo'));
+        return view('Todo.index', compact('todo'));
     }
 
     public function add(){
