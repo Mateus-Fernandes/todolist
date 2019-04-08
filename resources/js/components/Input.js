@@ -23,7 +23,7 @@ export default class Input extends React.Component {
         if(this.state.name == ''){
             this.nameInput.focus();
         }else{
-            axios.post('http://127.0.0.1:8000/api/tasks/'+this.props.todoId,{
+            axios.post('http://todolistvibbra-env.62ibvmp7mz.us-east-2.elasticbeanstalk.com/api/tasks/'+this.props.todoId,{
                 name: this.state.name,
                 todo_id: this.props.todoId,
                 status: 0

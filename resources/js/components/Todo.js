@@ -26,7 +26,7 @@ export default class Todo extends Component {
       // function for change node position on database
       moveNode(args){
         const {node, nextParentNode } = args;
-        let task = 'http://127.0.0.1:8000/api/tasks/' + node.id;
+        let task = 'http://todolistvibbra-env.62ibvmp7mz.us-east-2.elasticbeanstalk.com/api/tasks/' + node.id;
         let parentnode;
         if(nextParentNode != null){
             parentnode = nextParentNode.id;
@@ -39,7 +39,7 @@ export default class Todo extends Component {
       }
       
       fechItems(){
-          axios.get('http://127.0.0.1:8000/api/tasks/'+this.props.todoid).then((response) => {
+          axios.get('http://todolistvibbra-env.62ibvmp7mz.us-east-2.elasticbeanstalk.com/api/tasks/'+this.props.todoid).then((response) => {
               this.setState({
                 treeData: getTreeFromFlatData({
                     flatData: response.data.map(node => ({ ...node, title: node.name })),
@@ -79,7 +79,7 @@ export default class Todo extends Component {
                           defaultChecked={node.status}
                           onChange={(event) => {
                             const status = event.target.checked;
-                            let task_id = 'http://127.0.0.1:8000/api/tasks/' + node.id;
+                            let task_id = 'http://todolistvibbra-env.62ibvmp7mz.us-east-2.elasticbeanstalk.com/api/tasks/' + node.id;
                             axios.put(task_id, {
                                 status: status
                             }) //Save in DB
@@ -102,7 +102,7 @@ export default class Todo extends Component {
                         className="trash_button"
                         onClick={() =>
                           {
-                            let task_id = 'http://127.0.0.1:8000/api/tasks/' + node.id;
+                            let task_id = 'http://todolistvibbra-env.62ibvmp7mz.us-east-2.elasticbeanstalk.com/api/tasks/' + node.id;
                             axios.delete(task_id, {});
                             console.log(task_id)                                                       
                             this.setState(state => ({
@@ -124,7 +124,7 @@ export default class Todo extends Component {
                         value={node.name}
                         onChange={event => {
                           const name = event.target.value;
-                          let task_id = 'http://127.0.0.1:8000/api/tasks/' + node.id;
+                          let task_id = 'http://todolistvibbra-env.62ibvmp7mz.us-east-2.elasticbeanstalk.com/api/tasks/' + node.id;
                           axios.put(task_id, {
                               name: name
                           })
