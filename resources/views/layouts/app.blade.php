@@ -41,7 +41,7 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('sobre') }}">Sobre</a>
+                            <a class="nav-link" href="{{ route('About.index') }}">Sobre</a>
                         </li>                        
                         @guest
                             <li class="nav-item">
