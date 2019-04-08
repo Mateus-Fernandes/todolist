@@ -1,0 +1,557 @@
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+.todo_item {
+  padding: 1rem;
+  background: #fff;
+  align-items: center;
+  border-radius: 35px;
+  box-shadow: 1px 2px 4px 0px #00000014;
+  margin-bottom: 15px;
+}
+
+.rstcustom__rowLabel {
+  position: relative;
+}
+
+.rstcustom__rowWrapper {
+  padding: 20px 2px 2px 0;
+}
+
+.rstcustom__rowWrapper:hover {
+  padding: 20px 2px 2px 0;
+  opacity: 1;
+}
+
+.rstcustom__highlight // Mouse hover
+ {
+  background: none;
+  height: 100%;
+  cursor: pointer;
+}
+.rstcustom__rowContents {
+  border-radius: 70px;
+  background-color: white;
+  box-shadow: 0 1px 6px 1px rgba(206, 206, 206, 0.31), 0 1px 2px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.rstcustom__rowContents:hover {
+  -webkit-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  -webkit-box-shadow: 0 1px 6px 1px rgba(206, 206, 206, 0.31), 0 1px 2px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 1px 6px 1px rgba(206, 206, 206, 0.31), 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+
+input.input_todo {
+  border: 0;
+  padding-left: 6px;
+  font-size: 16px;
+  width: 100%;
+  color: #333 !important;
+}
+.btn_add_new_todo{
+  height: 50px;
+  padding: 10px 40px;
+  border-radius: 90px;
+  margin-right: 17px;
+  
+}
+
+h2 {
+  text-transform: uppercase;
+  font-size: 28px;
+  padding-bottom: 9px;
+  margin-bottom: 25px;
+  margin-top: 25px;
+  text-align: center;
+  width: 100%;
+  position: relative;
+
+  &:after{
+      position: absolute;
+      content: '';
+      width: 40%;
+      height: 3px;
+      background: #915092;
+      display: block;
+      margin-left: 29px;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-58%);
+  }
+}
+button.rstcustom__expandButton {
+  font-size: 10px;
+  top: 54px;
+  color: #57554f;
+  left:32px;
+}
+
+button.rstcustom__collapseButton {
+  font-size: 10px;
+  top: 54px;
+  color: #a6a8a9;
+  left:32px;
+}
+div#app {
+  min-height: 100vh;
+}
+main {
+  background: url('/img/bg.jpg');
+  min-height: 100vh;    background-size: cover;
+}
+
+h2.titleTodo {
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  padding: 23px 0px;
+  color: #333
+}
+
+.innerTodo {
+  background: #fff;
+  border-radius: 39px;
+  padding: 28px;
+  box-shadow: 2px -2px 6px 0px #00000017;
+}
+
+input#name {
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 80%;
+  border: none;
+  box-shadow: 0 1px 6px 1px rgba(206, 206, 206, 0.31), 0 1px 2px rgba(0, 0, 0, 0.08);
+  border-radius: 70px;
+  padding: 18px 25px;
+  font-weight: 500;
+  color: #000;
+  background: linear-gradient(to left, #fddd74, #FFEFBA);
+}
+
+input#name::placeholder {
+  text-transform: uppercase; 
+  letter-spacing: 2px;
+  color: #000;
+}
+
+#todo form {
+  position: relative;
+}
+
+#todo label {
+  width: 100%;
+}
+
+button.inputButton {
+  position: absolute;
+  right: 10%;
+  top: -8px;
+  background: #56544e;
+  border: none;
+  padding: 3px 26px;
+  color: #ffc400;
+  font-size: 44px;
+  font-weight: 300;
+  box-shadow: -1px 0px 3px #33333330;
+  border-radius: 100%;
+}
+
+.ReactVirtualized__Grid__innerScrollContainer {
+  overflow: auto !important;
+}
+
+.rstcustom__node {
+	-webkit-animation: slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+.rstcustom__rowToolbar {
+  align-items: center;
+}
+
+.trash_button{
+    background: transparent;
+    border: 0;    font-size: 18px;
+}
+
+.checkbox label {
+  margin-bottom: 0;
+  display: inline-block; // to make it easier to click
+  color: #fff;
+  cursor: pointer;
+  position: relative; // important
+
+  // Now we'll create the checkbox object
+
+  span {
+    display: inline-block;
+    position: relative;
+    background-color: transparent;
+    width: 25px;
+    height: 25px;
+    transform-origin: center;
+    border: 2px solid #ffc400;
+    border-radius: 50%;
+    vertical-align: -6px;
+    margin-right: 10px;
+    transition: background-color 150ms 200ms, transform 350ms cubic-bezier(.78,-1.22,.17,1.89); // custom ease effect for bouncy animation
+
+// Now we'll create the "tick" using pseudo elements - those will be basically two lines that will be rotated to form the "tick"
+
+  &:before {
+    content: "";
+    width: 0px;
+    height: 2px;
+    border-radius: 2px; // so that the tick has nice rounded look
+    background: #ffc400;
+    position: absolute;
+    transform: rotate(45deg);
+    top: 11px; //
+    left: 7px; // 
+    transition: width 50ms ease 50ms;
+    transform-origin: 0% 0%;
+  }
+
+  &:after {
+    content: "";
+    width: 0;
+    height: 2px;
+    border-radius: 2px; // so that the tick has nice rounded look
+    background: #ffc400;
+    position: absolute;
+    transform: rotate(305deg);
+    top: 14px; //
+    left: 8px; //
+    transition: width 50ms ease;
+    transform-origin: 0% 0%;
+  }
+}
+// Time to add some life to it
+
+&:hover {
+  span {
+    &:before {
+      width: 5px;
+      transition: width 100ms ease;
+    }
+    
+    &:after {
+      width: 10px;
+      transition: width 150ms ease 100ms;
+    }
+  }
+}
+}
+
+.checkbox input[type="checkbox"] {
+  display: none; // hide the system checkbox
+
+// Let's add some effects after the checkbox is checked
+
+&:checked {
+  + label {
+    span {
+      background-color: #56544e;
+      transform: scale(1.25); // enlarge the box
+      
+      &:after {
+        width: 10px;
+        background: #ffc400;
+        transition: width 150ms ease 100ms; // enlarge the tick
+      }
+      
+      &:before {
+        width: 5px;
+        background: #ffc400;
+        transition: width 150ms ease 100ms; // enlarge the tick
+      }
+    }
+    
+    &:hover { // copy the states for onMouseOver to avoid flickering
+      span {
+        background-color: #fff;
+        transform: scale(1.25); // enlarge the box
+
+        &:after {
+          width: 10px;
+          background: #ffc400;
+          transition: width 150ms ease 100ms; // enlarge the tick
+        }
+
+        &:before {
+          width: 5px;
+          background: #ffc400;
+          transition: width 150ms ease 100ms; // enlarge the tick
+        }
+      }  
+    }
+  }
+}
+}
+
+input.ativo.input_todo {
+  text-decoration: line-through;
+  color: #bfbfbf !important;
+  transition: 1s;
+}
+
+/* SHARE BUTTON */
+.share {
+  position: fixed;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  padding: 8px 18px;
+  width: 280px;
+  display: flex;
+  height: 68px;
+  font-size: 24px;
+  letter-spacing: 2px;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #15aaff, #149fee);
+  border-radius: 30px;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-in-out;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  align-items: center;
+  justify-content: center;
+  right: 3%;
+  bottom: 5%;
+
+  a{
+    color: #FFF;
+  }
+
+  .text {
+    position: absolute;
+    top: 21px;
+    left: 43px;
+    overflow: hidden;
+    width: 162px;
+    height: 30px;
+    text-align: right;
+    z-index: 1;
+    font-size: 17px;
+    color: #FFF;
+
+    em {
+      position: absolute;
+      right: 0;
+      top: 0;
+      transition: right .2s ease-in-out .1s;
+    }
+  }
+
+  .ico-share {
+    position: absolute;
+    top: 25px;
+    right: 42px;
+    transition: right .2s ease-in-out;
+    width: 20px;
+    height: 20px;
+  }
+
+  .ico {
+    font-size: 24px;
+    position: absolute;
+    top: 18px;
+    left: -35px;
+    transition: all .2s ease-in-out;
+    display: inline-block;
+    z-index: 2;
+  }
+
+  &:hover {
+    background: linear-gradient(to top, #15aaff, #149fee);
+    box-shadow: inset 0 3px 10px rgba(0, 0, 0, .3);
+
+    em {
+      right: -300%;
+      transition-delay: 0;
+    }
+
+    .fb {
+      left: 32px;
+      transition-delay: 0.3s;
+    }
+
+    .tw {
+      left: 70px;
+      font-size: 25px;
+      transition-delay: 0.2s;
+    }
+
+    .gp {
+      left: 119px;
+      transition-delay: 0.1s;
+    }
+
+    .ico-share {
+      top: 28px;
+      right: 30px;
+      width: 15px;
+      height: 15px;
+    }
+  }
+}
+
+/* Second */
+.share:nth-child(2) {
+  margin-top: 50px;
+  overflow: visible;
+  display: none;
+
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: linear-gradient(to bottom, #15aaff, #149fee);
+    border-radius: 30px;
+    transition: all .2s ease-in-out 0s;
+    transition-delay: 0.35s;
+  }
+
+  &::before {
+    background: linear-gradient(to bottom, #E2E2E2, #F5F5F5);
+    box-shadow:  inset 0 0 1px rgba(0, 0, 0, 0.7);
+    top: 0;
+    width: 78%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: -1;
+    transition: top .17s ease-in-out;
+    transition-delay: 0.35s;
+    border-radius: 0 0 8px 8px;
+  }
+
+  .text, 
+  .ico-share {
+    z-index: 2;
+  }
+
+  .ico {
+    color: #15a7fa;
+    top: 10px;
+    text-shadow: none;
+    transition: all .17s ease-in-out;
+    z-index: 1;
+  }
+
+  .fb {
+    left: 48px;
+    transition-delay: 0.1s;
+    color: #43609c;
+  }
+
+  .tw {
+    left: 87px;
+    transition-delay: 0.18s;
+    color: #1da1f2;
+
+  }
+
+  .gp {
+    left: 135px;
+    transition-delay: 0.26s;
+    color: #d73d32;    
+  }
+  
+  .ico-share {
+    transition: all .17s ease-in-out .1s;
+  }
+
+  &:hover {
+
+    &::after {
+      box-shadow: 0 1px 4px rgba(0, 0, 0, .5), inset 0 3px 10px rgba(0, 0, 0, .3);
+      background: linear-gradient(to top, #15aaff, #149fee);
+      transition-delay: 0s;
+    }
+
+    &::before {
+      top: 90%;
+      transition-delay: 0s;
+    }
+
+    .text em {
+      right: 0;
+    }
+
+    .ico-share {
+      top: 21px;
+      right: 43px;
+      width: 16px;
+      height: 16px;
+      transition-delay: 0s;
+    }
+
+    .ico {
+      top: 75px;
+    }
+
+  }
+}
+.name_add{
+  margin: 0 !important;
+  background: #FFF !important;
+  height: 65px;
+  width: 100% !important;
+}
+small#nameHelp {
+  margin-left: 30px;
+}
+
+.add_submit{
+  width: 100%;
+  border-radius: 40px;
+  height: 60px;
+  background: #56544e;
+  border: 2px solid #ffc400;
+  color: #ffc400;
+}
+@-webkit-keyframes slide-in-bottom {
+  0% {
+    -webkit-transform: translateY(1000px);
+            transform: translateY(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-bottom {
+  0% {
+    -webkit-transform: translateY(1000px);
+            transform: translateY(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
